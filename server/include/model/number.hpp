@@ -12,6 +12,7 @@ namespace Number {
       Number(Suit suit, Value value, bool is_effect);
       ~Number();
       Number(const Number &other);
+      virtual void effect() override;
 
     private:
   }; 

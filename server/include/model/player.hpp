@@ -3,18 +3,21 @@
 #include "card.hpp"
 #include <list>
 
+using namespace std;
+
 namespace Player {
   class Player {
     public:
-      Player(Card::Card handcard);
+      Player(list<Card::Card> handcard);
       ~Player();
-      Player(const Card::Card &player);
+      Player(const Player &other);
 
-      void play(Card::Card card);
-      std::list<Card::Card> getCards() const;
+      void play(Card::Card &card);
+      void draw(list<Card::Card> &deck);
+      list<Card::Card> getCards() const;
 
     private:
-      std::list<Card::Card> cards;
+      list<Card::Card> cards;
   }; 
 }
 

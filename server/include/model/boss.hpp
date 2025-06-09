@@ -15,8 +15,9 @@ namespace Boss {
 
       unsigned int getLife() const;
       unsigned int getAttack() const;
-      void setLife();
-      void setAttack();
+      void setLife(unsigned int life);
+      void setAttack(unsigned int attack);
+      virtual void effect() override;
 
     private:
       unsigned int life;
