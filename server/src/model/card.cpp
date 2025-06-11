@@ -3,27 +3,27 @@
 
 using namespace Utility;
 
-Suit Card::Card::getSuit() const {
+Suit Cards::Card::getSuit() const {
   return suit;
 }
 
-Value Card::Card::getValue() const {
+Value Cards::Card::getValue() const {
   return value;
 }
 
-bool Card::Card::getIsEffect() const {
+bool Cards::Card::getIsEffect() const {
   return is_effect;
 }
 
-Card::Card::Card(Suit suit, Value value, bool is_effect) 
+Cards::Card::Card(Suit suit, Value value, bool is_effect) 
   : suit(suit), value(value), is_effect(is_effect) 
 {
 
 }
 
-Card::Card::~Card() {}
+Cards::Card::~Card() {}
 
-Card::Card::Card(const Card &others)
+Cards::Card::Card(const Card &others)
   : suit(others.suit), value(others.value), is_effect(others.is_effect)
 {
 

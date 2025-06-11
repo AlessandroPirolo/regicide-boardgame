@@ -5,19 +5,19 @@
 
 using namespace std;
 
-namespace Player {
+namespace Players {
   class Player {
     public:
-      Player(list<Card::Card> handcard);
+      Player(list<Cards::Card> handcard);
       ~Player();
       Player(const Player &other);
 
-      void play(Card::Card &card);
-      void draw(list<Card::Card> &deck);
-      list<Card::Card> getCards() const;
+      void play(Cards::Card &card);
+      void draw(list<Cards::Card> &deck);
+      list<Cards::Card> getCards() const;
 
     private:
-      list<Card::Card> cards;
+      list<Cards::Card> cards;
   }; 
 }
 

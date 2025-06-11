@@ -3,18 +3,18 @@
 
 using namespace Utility;
 
-Number::Number::Number(Suit suit, Value value, bool is_effect) 
+Numbers::Number::Number(Suit suit, Value value, bool is_effect) 
   : Card(suit, value, is_effect)
 {
 
 }
 
-Number::Number::~Number() {}
+Numbers::Number::~Number() {}
 
-Number::Number::Number(const Number &other)
+Numbers::Number::Number(const Number &other)
   : Card(other)
 {
 
 }
 
-void Number::Number::effect() {}
+void Numbers::Number::effect() {}

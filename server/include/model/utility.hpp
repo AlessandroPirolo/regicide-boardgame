@@ -4,6 +4,7 @@
 namespace Utility {
   
   enum class Suit {
+    None,
     Hearts,
     Diamonds,
     Clubs,
@@ -11,6 +12,7 @@ namespace Utility {
   };
 
   enum class Value {
+    None,
     Ace,
     Two,
     Three,

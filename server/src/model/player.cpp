@@ -3,28 +3,28 @@
 
 using namespace std;
 
-Player::Player::Player(list<Card::Card> cards) 
+Players::Player::Player(list<Cards::Card> cards) 
   : cards(cards)
 {
 
 }
 
-Player::Player::~Player() {}
+Players::Player::~Player() {}
 
-Player::Player::Player(const Player &other) 
+Players::Player::Player(const Player &other) 
   : cards(other.cards)
 {
 
 }
 
-list<Card::Card> Player::Player::getCards() const {
+list<Cards::Card> Players::Player::getCards() const {
   return cards;
 }
 
-void Player::Player::play(Card::Card &card) {}
+void Players::Player::play(Cards::Card &card) {}
 
-void Player::Player::draw(list<Card::Card> &deck) {
-  Card::Card& card = deck.back();
+void Players::Player::draw(list<Cards::Card> &deck) {
+  Cards::Card& card = deck.back();
   cards.push_back(card);
   deck.pop_back(); 
 }

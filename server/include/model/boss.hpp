@@ -3,10 +3,10 @@
 #include "card.hpp"
 #include "utility.hpp"
 
-using namespace Card;
+using namespace Cards;
 using namespace Utility;
 
-namespace Boss {
+namespace Bosses {
   class Boss: public Card {
     public:
       Boss(Suit suit, Value value, bool is_effect, unsigned int life, unsigned int attack);

@@ -4,7 +4,7 @@
 
 using namespace Utility;
 
-namespace Card {
+namespace Cards {
   class Card {
     public:
       Card(Suit suit, Value value, bool is_effect);

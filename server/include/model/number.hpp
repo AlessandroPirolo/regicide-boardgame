@@ -3,10 +3,10 @@
 #include "card.hpp"
 #include "utility.hpp"
 
-using namespace Card;
+using namespace Cards;
 using namespace Utility;
 
-namespace Number {
+namespace Numbers {
   class Number: public Card {
     public:
       Number(Suit suit, Value value, bool is_effect);
