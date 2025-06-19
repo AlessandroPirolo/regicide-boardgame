@@ -1,5 +1,5 @@
-#include "../../include/model/card.hpp"
-#include "../../include/model/utility.hpp"
+#include "../../../include/model/card/card.hpp"
+#include "../../../include/model/utilities/utility.hpp"
 
 using namespace Utility;
 

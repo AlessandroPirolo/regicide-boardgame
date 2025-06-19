@@ -1,10 +1,8 @@
 #ifndef BOSS_H
 #define BOSS_H
 #include "card.hpp"
-#include "utility.hpp"
 
 using namespace Cards;
-using namespace Utility;
 
 namespace Bosses {
   class Boss: public Card {
@@ -17,7 +15,6 @@ namespace Bosses {
       unsigned int getAttack() const;
       void setLife(unsigned int life);
       void setAttack(unsigned int attack);
-      virtual void effect() override;
 
     private:
       unsigned int life;

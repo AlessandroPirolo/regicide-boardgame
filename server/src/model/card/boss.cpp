@@ -1,5 +1,5 @@
-#include "../../include/model/boss.hpp"
-#include "../../include/model/utility.hpp"
+#include "../../../include/model/card/boss.hpp"
+#include "../../../include/model/utilities/utility.hpp"
 
 using namespace Utility;
 
@@ -16,8 +16,6 @@ Bosses::Boss::Boss(const Boss &other)
 {
 
 }
-
-void Bosses::Boss::effect() {}
 
 void Bosses::Boss::setAttack(unsigned int attack) {
   this->attack = attack;

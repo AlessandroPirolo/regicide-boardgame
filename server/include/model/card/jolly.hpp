@@ -7,7 +7,6 @@ namespace Jollies {
   class Jolly: public Cards::Card {
     public:
       Jolly();
-      virtual void effect() override;
 
     private:
   };

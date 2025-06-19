@@ -1,5 +1,5 @@
-#include "../../include/model/player.hpp"
-#include "../../include/model/card.hpp"
+#include "../../../include/model/player/player.hpp"
+#include "../../../include/model/card/card.hpp"
 
 using namespace std;
 
