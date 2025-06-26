@@ -8,7 +8,7 @@ using namespace Effect;
 namespace Shuffle {
   class Shuffle: public IEffect {
     public:
-      virtual void perform(Status::IGameStatus* status) override;
+      virtual void perform(Status::IGameStatus* status, unsigned int amount) override;
   };
 }
 

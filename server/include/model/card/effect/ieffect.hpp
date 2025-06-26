@@ -6,7 +6,7 @@
 namespace Effect {
   class IEffect {
     public:
-      virtual void perform(Status::IGameStatus* status) = 0;
+      virtual void perform(Status::IGameStatus* status, unsigned int amount) = 0;
   };
 }
 

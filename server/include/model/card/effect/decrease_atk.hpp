@@ -8,7 +8,7 @@ using namespace Effect;
 namespace DecreaseAtk {
   class DecreaseAtk: public IEffect {
     public:
-      virtual void perform(Status::IGameStatus* status) override;
+      virtual void perform(Status::IGameStatus* status, unsigned int amount) override;
   };
 }
 
