@@ -1,30 +1,58 @@
 #include "../../../include/model/player/player.hpp"
 #include "../../../include/model/card/card.hpp"
+#include "../../../include/model/utilities/utility.hpp"
 
 using namespace std;
+using namespace Utility;
+using namespace Players;
+using namespace Cards;
 
-Players::Player::Player(list<Cards::Card> cards) 
-  : cards(cards)
+Player::Player(list<Card> cards) 
+  : cards(cards), played_cards(), playing_cards()
 {
 
 }
 
-Players::Player::~Player() {}
+Player::Player()
+  : cards(), playing_cards(), played_cards()
+{}
 
-Players::Player::Player(const Player &other) 
+Player::~Player() {}
+
+Player::Player(const Player &other) 
   : cards(other.cards)
 {
 
 }
 
-list<Cards::Card> Players::Player::getCards() const {
+list<Card> Player::getCards() {
   return cards;
 }
 
-void Players::Player::play(Cards::Card &card) {}
+list<Card> Player::getPlayedCards() {
+  return played_cards;
+}
 
-void Players::Player::draw(list<Cards::Card> &deck) {
-  Cards::Card& card = deck.back();
+list<Card> Player::getPlayingCards() {
+  return playing_cards;
+}
+
+void Player::nullifyEffectOf(Suit suit) {
+  for(Card c : cards) {
+    if(c.getSuit() == suit) c.setIsEffect(false);
+  }
+}
+
+void Player::activateEffectOf(Suit suit) {
+  for(Card c : cards) {
+    if(c.getSuit() == suit) c.setIsEffect(true);
+  }
+}
+
+void Player::play(Card &card) {}
+
+void Player::draw(list<Card> &deck) {
+  Card& card = deck.back();
   cards.push_back(card);
   deck.pop_back(); 
 }

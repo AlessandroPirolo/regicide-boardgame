@@ -2,33 +2,45 @@
 #include "../../../include/model/utilities/utility.hpp"
 
 using namespace Utility;
+using namespace Bosses;
+using namespace Effect;
 
-Bosses::Boss::Boss(Suit suit, Value value, bool is_effect, unsigned int life, unsigned int attack) 
-  : Card(suit, value, is_effect), life(life), attack(attack)
-{
+Boss::Boss(Suit suit, Value value, bool is_effect, unsigned int life, unsigned int attack, IEffect* effect) 
+  : Card(suit, value, is_effect, effect), life(life), attack(attack)
+{}
 
-}
+Boss::~Boss() {}
 
-Bosses::Boss::~Boss() {}
+Boss::Boss() 
+  : Card(), life(0), attack(0)
+{}
 
-Bosses::Boss::Boss(const Boss &other)
+Boss::Boss(const Boss &other)
   : Card(other), life(other.life), attack(other.attack)
-{
+{}
 
+Boss& Boss::operator=(const Boss& other) {
+  if (this != &other) {
+    life = other.life;
+    attack = other.attack;
+    setValue(other.getValue());
+    setSuit(other.getSuit());
+  }
+  return *this;
 }
 
-void Bosses::Boss::setAttack(unsigned int attack) {
+void Boss::setAttack(unsigned int attack) {
   this->attack = attack;
 }
 
-void Bosses::Boss::setLife(unsigned int life) {
+void Boss::setLife(unsigned int life) {
   this->life = life;
 }
 
-unsigned int Bosses::Boss::getLife() const {
+unsigned int Boss::getLife() const {
   return life;
 } 
 
-unsigned int Bosses::Boss::getAttack() const {
+unsigned int Boss::getAttack() const {
   return attack;
 } 

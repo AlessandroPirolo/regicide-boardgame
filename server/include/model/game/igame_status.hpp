@@ -4,10 +4,10 @@
 namespace Status {
   class IGameStatus {
     public:
-      virtual void draw() = 0;
-      virtual void shuffle() = 0;
-      virtual void decreaseAtk() = 0;
-      virtual void doubleAtk() = 0;
+      virtual void draw(unsigned int amount) = 0;
+      virtual void shuffle(unsigned int amount) = 0;
+      virtual void decreaseAtk(unsigned int amount) = 0;
+      virtual void doubleAtk(unsigned int amount) = 0;
       virtual void nullifyEfct() = 0;
 
   };
