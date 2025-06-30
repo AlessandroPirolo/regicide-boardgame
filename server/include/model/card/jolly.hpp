@@ -3,10 +3,12 @@
 
 #include "card.hpp"
 
+class IEffect;
+
 namespace Jollies {
   class Jolly: public Cards::Card {
     public:
-      Jolly();
+      Jolly(IEffect* effect);
 
     private:
   };

@@ -24,8 +24,7 @@ void Status::GameStatus::addBossDeck(std::list<Boss> boss_deck) {
 }
 
 void Status::GameStatus::nextBoss() {
-  Boss& next_boss = boss_deck.front();
-  current_boss = next_boss;
+  current_boss = boss_deck.front();
   boss_deck.pop_front();
 }
 
@@ -52,7 +51,7 @@ void Status::GameStatus::doubleAtk(unsigned int amount) {
 void Status::GameStatus::nullifyEfct() {
   current_boss.setIsEffect(false);
   Suit boss_suit = current_boss.getSuit();
-  for(Player p : players) {
+  for (Player p : players) {
     p.activateEffectOf(boss_suit);
   }
 }
@@ -75,6 +74,10 @@ void Status::GameStatus::shuffle(unsigned int amount) {
   std::random_device rd;
   std::mt19937 g(rd());
   std::shuffle(waste_heap.begin(), waste_heap.end(), g);
-
+  std::list<Card> heal (amount);
+  //chosen by the player 
+  for (int i = 0; i < amount; i++) { // WILL BE REMOVED
+    heal.emplace_back(waste_heap.back());
+    waste_heap.pop_back();
+  }
 }
-
