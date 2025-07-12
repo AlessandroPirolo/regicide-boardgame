@@ -1,6 +1,6 @@
-#include "../../../include/model/game/game.hpp"
+#include "../include/game.hpp"
+#include <list>
 
-using namespace Games;
 using namespace Status;
 
 Game::Game(IGameStatus* status)
@@ -11,11 +11,29 @@ Game::~Game()
 {}
 
 void Game::step1() {
+  std::list<Cards::Card> move = this->ch->recv();
+  this->status->play(move);
+}
+
+void Game::step2() {
+
+}
   
+void Game::step3() {
+
+}
+
+void Game::step4() {
+
 }
 
 void Game::play() {
   // wait for a player move
-  status->play();
+  
+  while (true) 
+  {
+    step1();
+    step2();
+  }
 
 }

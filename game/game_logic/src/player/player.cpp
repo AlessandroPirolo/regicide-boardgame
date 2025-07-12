@@ -1,10 +1,6 @@
-#include "../../../include/model/player/player.hpp"
-#include "../../../include/model/card/card.hpp"
-#include "../../../include/model/utilities/utility.hpp"
-
-using namespace Utility;
-using namespace Players;
-using namespace Cards;
+#include "../../include/player/player.hpp"
+#include "../../include/card/card.hpp"
+#include "../../include/utilities/utility.hpp"
 
 Player::Player(std::list<Card> cards) 
   : cards(cards), played_cards(), playing_cards()

@@ -1,16 +1,14 @@
-#include "../../../include/model/card/number.hpp"
+#include "../../include/card/number.hpp"
 
-using namespace Utility;
-
-Numbers::Number::Number(Suit suit, Value value, bool is_effect, Effect::Effect *effect) 
+Number::Number(Suit suit, Value value, bool is_effect, Effect *effect) 
   : Card(suit, value, is_effect, effect)
 {
 
 }
 
-Numbers::Number::~Number() {}
+Number::~Number() {}
 
-Numbers::Number::Number(const Number &other)
+Number::Number(const Number &other)
   : Card(other)
 {
 

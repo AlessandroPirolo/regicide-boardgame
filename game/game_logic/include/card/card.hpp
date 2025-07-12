@@ -4,35 +4,30 @@
 #include "effect/ieffect.hpp"
 #include "../utilities/utility.hpp"
 
-using namespace Utility;
 
-namespace Cards {
-  class Card {
-    public:
-      Card(Suit suit, Value value, bool is_effect, Effect::Effect* effect);
-      ~Card();
-      Card(const Card &other);
-      Card();
-      bool operator==(const Card &other);
+class Card {
+  public:
+    Card(Suit suit, Value value, bool is_effect, Effect* effect);
+    ~Card();
+    Card(const Card &other);
+    Card();
+    bool operator==(const Card &other);
 
-      Suit getSuit() const;
-      void setSuit(Suit suit);
-      Effect::Effect getEffect() const; 
+    Suit getSuit() const;
+    void setSuit(Suit suit);
+    Effect getEffect() const; 
 
-      Value getValue() const;
-      void setValue(Value value);
+    Value getValue() const;
+    void setValue(Value value);
 
-      bool getIsEffect() const;
-      void setIsEffect(bool val); 
+    bool getIsEffect() const;
+    void setIsEffect(bool val); 
 
-    private:
-      Suit suit;
-      Value value;
-      bool is_effect;
-      Effect::Effect* effect;
-      
-
-  };  
-}
+  private:
+    Suit suit;
+    Value value;
+    bool is_effect;
+    Effect* effect;
+};  
 
 #endif

@@ -1,12 +1,9 @@
-#include "../../../include/model/card/boss.hpp"
-#include "../../../include/model/utilities/utility.hpp"
-
-using namespace Utility;
-using namespace Bosses;
+#include "../../include/card/boss.hpp"
+#include "../../include/utilities/utility.hpp"
 
 Boss::Boss(Suit suit, Value value, 
     bool is_effect, unsigned int life, 
-    unsigned int attack, Effect::Effect* effect) 
+    unsigned int attack, Effect* effect) 
   : Card(suit, value, is_effect, effect), life(life), attack(attack)
 {}
 

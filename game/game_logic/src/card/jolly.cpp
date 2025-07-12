@@ -1,3 +1,3 @@
-#include "../../../include/model/card/jolly.hpp"
+#include "../../include/card/jolly.hpp"
 
-Jollies::Jolly::Jolly(Effect::Effect* effect) : Cards::Card(Suit::None, Value::None, true, effect) {}
+Jolly::Jolly(Effect* effect) : Card(Suit::None, Value::None, true, effect) {}
