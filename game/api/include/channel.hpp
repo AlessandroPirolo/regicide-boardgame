@@ -6,22 +6,20 @@
 #include <vector>
 #include <list>
 
-namespace Channels {
-  template <typename T> 
-  class Channel {
-    public:
-      void send(std::list<T> args) const;
-      std::list<T> recv() const;
-      Channel* clone() const;
+template <typename T> 
+class Channel {
+  public:
+    void send(std::list<T> args) const;
+    std::list<T> recv() const;
+    Channel* clone() const;
 
-    private:
-      Channel(unsigned int copies = 1);
-      mutable std::mutex m;
-      mutable std::vector<T> buff;
-      mutable bool empty;
-      mutable std::condition_variable cv;
-      mutable unsigned int copies;
-  };
-}
+  private:
+    Channel(unsigned int copies = 1);
+    std::mutex m;
+    std::vector<T> buff;
+    bool empty;
+    std::condition_variable cv;
+    unsigned int copies;
+};
 
 #endif // !CHANNEL_H

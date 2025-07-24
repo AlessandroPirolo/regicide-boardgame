@@ -14,20 +14,24 @@ class Card {
     bool operator==(const Card &other);
 
     Suit getSuit() const;
-    void setSuit(Suit suit);
+    void setSuit(Suit suit) const;
     Effect getEffect() const; 
 
     Value getValue() const;
-    void setValue(Value value);
+    void setValue(Value value) const;
+
+    unsigned int getAtk() const;
+    void setAtk(unsigned int atk) const;
 
     bool getIsEffect() const;
-    void setIsEffect(bool val); 
+    void setIsEffect(bool val) const; 
 
   private:
-    Suit suit;
-    Value value;
-    bool is_effect;
+    mutable Suit suit;
+    mutable Value value;
+    mutable bool is_effect;
     Effect* effect;
+    mutable unsigned int attack;
 };  
 
 #endif

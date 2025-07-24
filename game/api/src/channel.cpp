@@ -1,7 +1,6 @@
 #include "../include/channel.hpp"
 #include <mutex>
 
-using namespace Channels;
 
 template <typename T>
 void Channel<T>::send(std::list<T> args) const {

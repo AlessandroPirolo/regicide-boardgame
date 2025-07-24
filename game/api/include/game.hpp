@@ -1,14 +1,13 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "../../game_logic/include/game/igame_status.hpp"
-#include "../include/channel.hpp"
-
-using namespace Status;
+class GameStatus;
+template <typename T> class Channel;
+class Card;
 
 class Game {
   public:
-    Game(IGameStatus *status);
+    Game(GameStatus *status);
     ~Game();
     void play();
 
@@ -17,8 +16,9 @@ class Game {
     void step2();
     void step3();
     void step4();
+    bool won();
 
-    IGameStatus *status;
-    Channels::Channel<Cards::Card> *ch;
+    GameStatus *status;
+    Channel<Card> *ch;
 };
 #endif

@@ -1,28 +1,33 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include "../../include/card/card.hpp"
 #include <list>
+#include <set>
+
+class Card;
+enum class Suit : unsigned int;
 
 class Player {
   public:
-    Player(std::list<Card> handcard);
+    Player(std::set<Card> handcard);
     ~Player();
     Player(const Player &other);
     Player();
 
-    void play(std::list<Card> cards);
-    void draw(std::list<Card> &deck);
-    std::list<Card> getCards();
-    std::list<Card> getPlayedCards();
-    std::list<Card> getPlayingCards();
-    void nullifyEffectOf(Suit suit);
-    void activateEffectOf(Suit suit);
+    void play(std::list<Card> cards) const;
+    void draw(std::list<Card> &deck) const;
+    std::list<Card> dumpPlayingCards() const;
+    std::set<Card> getCards() const;
+    std::list<Card> getPlayedCards() const;
+    std::list<Card> getPlayingCards() const;
+    void nullifyEffectOf(Suit suit) const;
+    void activateEffectOf(Suit suit) const;
+    void doubleAtk() const;
 
   private:
-    std::list<Card> cards;
-    std::list<Card> playing_cards;
-    std::list<Card> played_cards;
+    mutable std::set<Card> cards;
+    mutable std::list<Card> playing_cards;
+    mutable std::list<Card> played_cards;
 }; 
 
 #endif
