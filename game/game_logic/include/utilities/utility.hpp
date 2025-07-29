@@ -1,6 +1,11 @@
 #ifndef UTILITY_H
 #define UTILITY_H
 
+#include <list>
+#include <algorithm>
+#include <map>
+#include <random>
+
 enum class Suit : unsigned int {
   None = 0,
   Hearts = 1,
@@ -26,5 +31,12 @@ enum class Value : unsigned int {
   King = 20
 };
 
-
+namespace UtilityMethod {
+  template <typename T> 
+  void shuffle(std::list<T>& l) {
+    std::random_device rd;
+    std::mt19937 g(rd());
+    std::shuffle(l.begin(), l.end(), g);
+  }
+}
 #endif
