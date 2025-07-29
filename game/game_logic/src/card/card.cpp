@@ -54,3 +54,7 @@ unsigned int Card::getAtk() const {
 void Card::setAtk(unsigned int atk) const {
   attack = atk;
 }
+
+void Card::resetAtk() const {
+  this->attack = int(this->value);
+}

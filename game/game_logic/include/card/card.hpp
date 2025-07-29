@@ -26,6 +26,8 @@ class Card {
     bool getIsEffect() const;
     void setIsEffect(bool val) const; 
 
+    void resetAtk() const;
+
   private:
     mutable Suit suit;
     mutable Value value;
