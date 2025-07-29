@@ -14,20 +14,20 @@ class Player {
     Player(const Player &other);
     Player();
 
-    void play(std::list<Card> cards) const;
+    bool play(std::list<Card> cards) const;
+    bool discard(std::list<Card> cards) const;
     void draw(std::list<Card> &deck) const;
     std::list<Card> dumpPlayingCards() const;
     std::set<Card> getCards() const;
-    std::list<Card> getPlayedCards() const;
     std::list<Card> getPlayingCards() const;
     void nullifyEffectOf(Suit suit) const;
     void activateEffectOf(Suit suit) const;
     void doubleAtk() const;
+    void resetAtk() const;
 
   private:
     mutable std::set<Card> cards;
     mutable std::list<Card> playing_cards;
-    mutable std::list<Card> played_cards;
 }; 
 
 #endif
