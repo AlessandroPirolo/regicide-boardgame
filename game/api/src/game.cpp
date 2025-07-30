@@ -1,8 +1,8 @@
 #include "../include/game.hpp"
 #include "../include/channel.hpp"
 #include "../../game_logic/include/game/game_status.hpp"
+#include "../../game_logic/include/card/boss.hpp"
 #include <list>
-
 
 Game::Game(GameStatus* status)
   : status(status) 
@@ -12,24 +12,27 @@ Game::~Game()
 {}
 
 void Game::step1() {
-  std::list<Card> move = this->ch->recv();
-  this->status->play(move);
+  std::list<Card> move = ch->recv();
+  status->play(move);
 }
 
 void Game::step2() {
-  this->status->resolveEffects();
+  status->resolveEffects();
 }
   
 void Game::step3() {
-  this->status->attack();
+  status->attack();
 }
 
 void Game::step4() {
-  this->status->defend();
+  if (!status->defend(*this->ch))
+  {
+    //lost
+  }
 }
 
 bool Game::won() {
-  return this->status->won();
+  return status->won();
 }
 
 void Game::play() {
@@ -38,6 +41,15 @@ void Game::play() {
     step1();
     step2();
     step3();
-    if (!won()) step4();
+    if (status->getCurrentBoss().getLife() == 0) 
+    {
+      if (!won()) status->nextBoss();
+    }
+    else 
+    {
+      step4();
+      status->nextPlayer();
+    }
   }
+
 }
