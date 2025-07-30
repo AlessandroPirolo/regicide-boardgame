@@ -11,11 +11,11 @@ template <typename T> class Channel;
 
 class GameStatus {
   public:
-    void play(std::list<Card> move) const;
+    bool play(std::list<Card> move) const;
     bool won() const;
     void resolveEffects() const;
     void attack() const;
-    void defend(Channel<Card>& ch) const;
+    bool defend(Channel<Card>& ch) const;
 
     GameStatus(unsigned int max_cards, unsigned int turn = 0);
 
@@ -25,6 +25,7 @@ class GameStatus {
     void nextBoss() const;
     void nextPlayer() const;
     void nextTurn() const;
+    Boss getCurrentBoss() const;
 
   private:
     void draw(unsigned int amount) const;
@@ -38,6 +39,7 @@ class GameStatus {
     mutable std::list<Card> waste_heap;
     mutable std::list<Boss> boss_deck;
     mutable Boss* current_boss;
+    mutable Player* current_player;
     mutable unsigned int turn;
     mutable unsigned int phase;
     unsigned int max_cards;
